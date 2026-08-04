@@ -765,6 +765,11 @@ img {
   color: var(--color-text-primary);
 }
 
+.skill-list {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
 /* Resume Button in Navigation */
 .btn-resume {
   position: absolute;
