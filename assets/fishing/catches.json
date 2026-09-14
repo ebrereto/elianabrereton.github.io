@@ -1,0 +1,242 @@
+[
+  {
+    "id": "sardine",
+    "name": "sardine",
+    "category": "fish",
+    "rarity": "common",
+    "value": 10,
+    "description": "small fish. very big plans.",
+    "hint": "",
+    "sprite": "assets/sardine.svg"
+  },
+  {
+    "id": "anchovy",
+    "name": "anchovy",
+    "category": "fish",
+    "rarity": "common",
+    "value": 10,
+    "description": "would prefer not to discuss pizza.",
+    "hint": "",
+    "sprite": "assets/anchovy.svg"
+  },
+  {
+    "id": "sand-goby",
+    "name": "sand goby",
+    "category": "fish",
+    "rarity": "common",
+    "value": 12,
+    "description": "has been sitting here the whole time.",
+    "hint": "",
+    "sprite": "assets/sand-goby.svg"
+  },
+  {
+    "id": "flounder",
+    "name": "flounder",
+    "category": "fish",
+    "rarity": "common",
+    "value": 14,
+    "description": "a firm believer in lying down.",
+    "hint": "",
+    "sprite": "assets/flounder.svg"
+  },
+  {
+    "id": "mackerel",
+    "name": "mackerel",
+    "category": "fish",
+    "rarity": "uncommon",
+    "value": 25,
+    "description": "dressed for a very small business meeting.",
+    "hint": "",
+    "sprite": "assets/mackerel.svg"
+  },
+  {
+    "id": "clownfish",
+    "name": "clownfish",
+    "category": "fish",
+    "rarity": "uncommon",
+    "value": 28,
+    "description": "no jokes prepared. feeling the pressure.",
+    "hint": "",
+    "sprite": "assets/clownfish.svg"
+  },
+  {
+    "id": "pufferfish",
+    "name": "pufferfish",
+    "category": "fish",
+    "rarity": "uncommon",
+    "value": 30,
+    "description": "has made itself everyone\u2019s problem.",
+    "hint": "",
+    "sprite": "assets/pufferfish.svg"
+  },
+  {
+    "id": "seahorse",
+    "name": "seahorse",
+    "category": "fish",
+    "rarity": "uncommon",
+    "value": 32,
+    "description": "a horse, according to the ocean.",
+    "hint": "",
+    "sprite": "assets/seahorse.svg"
+  },
+  {
+    "id": "moonfish",
+    "name": "moonfish",
+    "category": "fish",
+    "rarity": "rare",
+    "value": 65,
+    "description": "round. reflective. unavailable for comment.",
+    "hint": "",
+    "sprite": "assets/moonfish.svg"
+  },
+  {
+    "id": "flying-fish",
+    "name": "flying fish",
+    "category": "fish",
+    "rarity": "rare",
+    "value": 65,
+    "description": "briefly considered a career in aviation.",
+    "hint": "",
+    "sprite": "assets/flying-fish.svg"
+  },
+  {
+    "id": "teacup-jelly",
+    "name": "teacup jelly",
+    "category": "creature",
+    "rarity": "uncommon",
+    "value": 30,
+    "description": "steeping quietly. please do not stir.",
+    "hint": "",
+    "sprite": "assets/teacup-jelly.svg"
+  },
+  {
+    "id": "ribbon-ray",
+    "name": "ribbon ray",
+    "category": "creature",
+    "rarity": "uncommon",
+    "value": 35,
+    "description": "gift wrapping itself was a choice.",
+    "hint": "",
+    "sprite": "assets/ribbon-ray.svg"
+  },
+  {
+    "id": "pocket-squid",
+    "name": "pocket squid",
+    "category": "creature",
+    "rarity": "rare",
+    "value": 60,
+    "description": "carries eight imaginary shopping bags.",
+    "hint": "",
+    "sprite": "assets/pocket-squid.svg"
+  },
+  {
+    "id": "dumpling-slug",
+    "name": "dumpling slug",
+    "category": "creature",
+    "rarity": "rare",
+    "value": 60,
+    "description": "not a snack. deeply offended you asked.",
+    "hint": "",
+    "sprite": "assets/dumpling-slug.svg"
+  },
+  {
+    "id": "lantern-minnow",
+    "name": "lantern minnow",
+    "category": "creature",
+    "rarity": "secret",
+    "value": 120,
+    "description": "leaves a little light on for everyone.",
+    "hint": "a little sparkle in the bait might help.",
+    "sprite": "assets/lantern-minnow.svg"
+  },
+  {
+    "id": "cloudfin",
+    "name": "cloudfin",
+    "category": "creature",
+    "rarity": "secret",
+    "value": 130,
+    "description": "the forecast said a small chance of fish.",
+    "hint": "the water remembers patient visitors. available with any bait.",
+    "sprite": "assets/cloudfin.svg"
+  },
+  {
+    "id": "left-sandal",
+    "name": "left sandal",
+    "category": "junk",
+    "rarity": "common",
+    "value": 6,
+    "description": "still looking for its sole mate.",
+    "hint": "",
+    "sprite": "assets/left-sandal.svg"
+  },
+  {
+    "id": "polite-tin",
+    "name": "polite tin",
+    "category": "junk",
+    "rarity": "common",
+    "value": 7,
+    "description": "thank you for picking it up.",
+    "hint": "",
+    "sprite": "assets/polite-tin.svg"
+  },
+  {
+    "id": "soggy-sock",
+    "name": "soggy sock",
+    "category": "junk",
+    "rarity": "common",
+    "value": 6,
+    "description": "a surprisingly successful marine biologist.",
+    "hint": "",
+    "sprite": "assets/soggy-sock.svg"
+  },
+  {
+    "id": "tiny-traffic-cone",
+    "name": "tiny traffic cone",
+    "category": "junk",
+    "rarity": "uncommon",
+    "value": 20,
+    "description": "this bit of ocean is closed.",
+    "hint": "",
+    "sprite": "assets/tiny-traffic-cone.svg"
+  },
+  {
+    "id": "sea-glass",
+    "name": "sea glass",
+    "category": "treasure",
+    "rarity": "common",
+    "value": 16,
+    "description": "the sea has been working on this for a while.",
+    "hint": "",
+    "sprite": "assets/sea-glass.svg"
+  },
+  {
+    "id": "message-bottle",
+    "name": "message bottle",
+    "category": "treasure",
+    "rarity": "uncommon",
+    "value": 35,
+    "description": "\u201cif found, please water my plants.\u201d",
+    "hint": "",
+    "sprite": "assets/message-bottle.svg"
+  },
+  {
+    "id": "very-small-crown",
+    "name": "very small crown",
+    "category": "treasure",
+    "rarity": "rare",
+    "value": 75,
+    "description": "a shrimp somewhere is having a difficult day.",
+    "hint": "",
+    "sprite": "assets/very-small-crown.svg"
+  },
+  {
+    "id": "pearl-with-a-view",
+    "name": "pearl with a view",
+    "category": "treasure",
+    "rarity": "secret",
+    "value": 140,
+    "description": "has seen things. mostly the dock.",
+    "hint": "a pocketful of different discoveries may reveal something special.",
+    "sprite": "assets/pearl-with-a-view.svg"
+  }
+]

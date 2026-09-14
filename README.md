@@ -30,3 +30,33 @@ preferences. The writing section is deferred until there are posts to publish.
 
 Prepare changes on a separate branch, run the link checks, and review phone and desktop
 layouts before merging into `main`. GitHub Pages publishes the repository root.
+
+## Fishing
+
+`fishing.html` is an original static fishing game. Its source page is
+`_source/pages/fishing.html`, styles are in `css/fishing.css`, and JavaScript modules
+are in `js/fishing/`. Original pixel sprites and the catch catalogue live in
+`assets/fishing/`. No external services or game engine are required.
+
+Use space, click, or tap to cast, hook a bite, and stop the reeling marker in the
+striped target. Instructions open only through the how-to-play button. Sound effects
+start muted and only play after interaction. Reduced-motion preferences stop ambient
+animation. Switching screens pauses fishing; returning from a hidden browser tab
+requires an explicit resume.
+
+The localStorage key `eliana.fishing.v1` stores the collection, tackle, best score,
+sound preference, and rare-catch bonus counter. Saves are validated; unknown future
+versions are not overwritten. Resetting progress requires confirmation. Session
+score starts fresh on reload. Saves belong to the browser and origin; localhost
+preview progress does not transfer automatically to the live domain.
+
+Run the dependency-free game checks with Node 22 or newer:
+
+```sh
+node --experimental-default-type=module scripts/test-fishing.mjs
+```
+
+These cover state transitions, timing boundaries, probability normalization, bait
+effects, unlocks, persistence, corrupted saves, and drawing commands. Visual browser
+checks are separate: verify desktop and mobile layouts, touch and keyboard controls,
+catch reveals, aquarium dialogs, audio, and saved progress after reloading.
