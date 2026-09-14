@@ -9,6 +9,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / '_source'
 PAGES = {
+    'fishing': ('Fishing | Eliana Brereton', 'A little place to fish. A cozy original fishing game.', '/fishing.html', ''),
     'index': ('Eliana Brereton | Recruiting, Technology & AI Ethics', 'Recruiter at PostHog with a research background in AI ethics. Explore my work, research, and interests.', '/', ''),
     'work': ('Work | Eliana Brereton', 'Selected recruiting and accessibility work, followed by my professional history.', '/work.html', 'work'),
     'research': ('Research | Eliana Brereton', 'Research into AI ethics, algorithmic hiring, and AI-generated interview assessments. Papers, results, and figures.', '/research.html', 'research'),
@@ -29,7 +30,7 @@ def build():
         # User preference applies to page metadata as well as visible prose.
         title = re.sub(r'(?<=\w)-(?=\w)', ' ', title).replace('—', '|').replace('–', '|')
         description = re.sub(r'(?<=\w)-(?=\w)', ' ', description).replace('—', ', ').replace('–', ', ')
-        values = {'title': escape(title), 'description': escape(description, quote=True), 'canonical': canonical, 'header': header, 'footer': footer, 'content': source.read_text()}
+        values = {'title': escape(title), 'description': escape(description, quote=True), 'canonical': canonical, 'header': header, 'footer': footer, 'content': source.read_text(), 'page_assets': '<link rel="stylesheet" href="./css/fishing.css"><script type="module" src="./js/fishing/main.js"></script>' if slug == 'fishing' else ''}
         for key, value in values.items():
             page = page.replace('{{' + key + '}}', value)
         for name in ('work', 'research', 'about'):
@@ -37,7 +38,7 @@ def build():
         (ROOT / (slug + '.html')).write_text(page)
     # Old incoming links remain valid. The fallback link also works without JS.
     for old, new in ALIASES.items():
-        (ROOT / old).write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url={new}"><link rel="canonical" href="https://eliana.brereton.me{new.split("#")[0]}"><title>Page moved | Eliana Brereton</title></head><body><main><h1>This page has moved.</h1><p><a href="{new}">Continue to the updated page</a></p></main></body></html>')
+        (ROOT / old).write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url=.{new}"><link rel="canonical" href="https://eliana.brereton.me{new.split("#")[0]}"><title>Page moved | Eliana Brereton</title></head><body><main><h1>This page has moved.</h1><p><a href=".{new}">Continue to the updated page</a></p></main></body></html>')
     print('Static pages generated. CNAME, .nojekyll, and original assets are unchanged.')
 
 if __name__ == '__main__':

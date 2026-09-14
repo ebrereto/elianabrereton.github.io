@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fishing | Eliana Brereton</title>
+  <meta name="description" content="A little place to fish. A cozy original fishing game.">
+  <meta name="author" content="Eliana Brereton">
+  <link rel="canonical" href="https://eliana.brereton.me/fishing.html">
+  <meta property="og:title" content="Fishing | Eliana Brereton">
+  <meta property="og:description" content="A little place to fish. A cozy original fishing game.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eliana.brereton.me/fishing.html">
+  <link rel="icon" type="image/jpeg" href="./img/headshot_circle.jpeg">
+  <link rel="stylesheet" href="./css/site.css">
+  <script src="./js/site.js" defer></script>
+<link rel="stylesheet" href="./css/fishing.css"><script type="module" src="./js/fishing/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="wordmark" href="./" aria-label="Eliana Brereton, home">eliana brereton<span aria-hidden="true">.</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu <span aria-hidden="true">+</span></button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="./work.html" >Work</a>
+      <a href="./research.html" >Research</a>
+      <a href="./about.html" >About</a>
+      <a class="resume-link" href="./img/web_resume_2026.pdf">Résumé <span class="file-label">PDF</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"><div class="fishing-shell" id="fishing-app">
+  <h1 class="sr-only">fishing</h1>
+  <div class="fishing-toolbar">
+    <div class="view-switch" role="group" aria-label="game screens">
+      <button type="button" data-view="fish" aria-pressed="true">fish</button>
+      <button type="button" data-view="aquarium" aria-pressed="false">aquarium <span id="collection-count">0/24</span></button>
+      <button type="button" data-view="tackle" aria-pressed="false">tackle <span id="unlock-dot" hidden aria-label="new tackle available">●</span></button>
+    </div>
+    <div class="utility-controls">
+      <button type="button" id="sound" aria-pressed="false">sound: off</button>
+      <button type="button" id="pause" aria-pressed="false">pause</button>
+    </div>
+  </div>
+  <p id="save-warning" class="notice" role="status" hidden></p>
+  <section id="fish-view" aria-label="fishing dock">
+    <div class="game-frame" id="game-frame">
+      <canvas id="dock" width="384" height="216" tabindex="0" aria-label="fishing dock. press space or use the action button below to cast, hook, and reel.">Use the action button below to play. The fishing status and timing target also appear as text.</canvas>
+      <div id="pause-overlay" class="pause-overlay" hidden><p>take your time.</p><button type="button" id="resume">resume fishing</button></div>
+      <div id="reveal" class="catch-reveal" hidden>
+        <span id="reveal-tag" class="reveal-tag"></span>
+        <img id="reveal-sprite" alt="" width="96" height="96">
+        <h2 id="reveal-name"></h2><p id="reveal-description"></p><span id="reveal-stats"></span>
+      </div>
+    </div>
+    <div class="fishing-console">
+      <div class="status-row"><p id="game-status" role="status" aria-live="polite">getting the dock ready…</p><span id="catch-value" class="catch-value"></span></div>
+      <div id="timing" class="timing" hidden>
+        <div class="timing-label"><span>stop inside the striped zone</span><span id="timing-cue">keep going</span></div>
+        <div class="meter" role="meter" aria-label="reeling marker" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="moving toward the target" id="meter">
+          <div id="target-zone" class="target-zone"><span aria-hidden="true">✓</span></div><div id="marker" class="marker" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="action-row"><div class="session-stats"><span>session <strong id="session-score">0</strong></span><span>best <strong id="best-score">0</strong></span></div><button id="action" class="cast-button" type="button" disabled>loading…</button></div>
+      <div class="console-bottom"><span>space, click, or tap <span aria-hidden="true">·</span> <span id="equipped">driftwood rod</span></span><button type="button" id="new-session">new session</button></div>
+    </div>
+    <div class="tutorial" id="tutorial" hidden><p><strong>a little how-to</strong> cast your line. when the bobber dips and “a bite!” appears, hook it. then stop the marker inside the striped zone. missed one? there’s always another fish.</p><button type="button" id="dismiss-tutorial" aria-label="close instructions">got it</button></div>
+    <div class="fishing-options"><button type="button" id="help" aria-expanded="false" aria-controls="tutorial">how to play</button></div>
+  </section>
+  <section id="aquarium-view" aria-label="aquarium" hidden>
+    <div class="tank-frame"><canvas id="aquarium" width="384" height="180" aria-label="your caught fish and creatures swimming in an aquarium"></canvas><p id="empty-tank">a little quiet in here. for now.</p></div>
+    <div class="collection-top"><h3>your catches <span id="discovery-total">0 / 24</span></h3><div role="group" aria-label="filter collection" class="collection-filters"><button type="button" data-filter="all" aria-pressed="true">all</button><button type="button" data-filter="living" aria-pressed="false">swimming</button><button type="button" data-filter="shelf" aria-pressed="false">the shelf</button></div></div>
+    <div id="collection-grid" class="collection-grid"></div>
+  </section>
+  <section id="tackle-view" aria-label="tackle" hidden>
+    <h3 class="tackle-label">your rods</h3><div id="rods" class="tackle-grid"></div>
+    <h3 class="tackle-label">a little bait</h3><div id="baits" class="tackle-grid"></div>
+    <details class="odds"><summary>what are my chances?</summary><div id="odds-content"></div><p>after 10 casts without a rare or secret catch, their odds gently rise until you land one. a special shell joins the pool after 8 discoveries. nothing needs a particular rod, time of day, or return visit.</p></details>
+  </section>
+  <p id="unlock-message" class="unlock-message" role="status" hidden></p>
+  <div class="fishing-end"><p class="fishing-footnote">I made this game for myself and others to have fun with on my website, as well as to see if I could actually make a fun, playable game. Hope you enjoy. :-)</p><button type="button" id="reset">reset progress</button></div>
+  <dialog id="detail-dialog" aria-labelledby="detail-name"><button type="button" class="dialog-close" id="close-detail" aria-label="close catch details">×</button><div id="detail-content"></div></dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title"></h2><p id="confirm-copy"></p><div class="dialog-actions"><button type="button" id="cancel-confirm">keep playing</button><button type="button" id="accept-confirm" class="danger-button"></button></div></dialog>
+  <noscript><p class="notice">fishing needs JavaScript to run. the rest of the website works without it.</p></noscript>
+</div>
+</main>
+<footer class="site-footer" id="contact">
+  <div class="shell">
+    <div class="footer-top">
+      <div><h2 class="eyebrow">Connect with me:</h2></div>
+      <div class="contact-links">
+        <a class="email-link" href="mailto:eliana@brereton.me">eliana@brereton.me <span aria-hidden="true">↗</span></a>
+        <div class="social-links"><a href="https://www.linkedin.com/in/eliana-brereton-18495a205/">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/ebrereto">GitHub <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Eliana Brereton</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
